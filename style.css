@@ -1,0 +1,354 @@
+/* Fluid Typography Scale */
+:root {
+  --text-xs: clamp(0.8rem, 0.77rem + 0.15vw, 0.9rem);      /* Captions, footer */
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);    /* Body, nav, general text */
+  --text-md: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);         /* About paragraphs, chapter headings */
+  --text-lg: clamp(1.1rem, 1.02rem + 0.4vw, 1.3rem);       /* Poems, TOC links, cover actions */
+  --text-h1: clamp(1.488rem, 1.19rem + 1.488vw, 2.21rem);      /* Page & poem titles */
+}
+
+/* Base Page & Archival Paper Feel */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: #222;
+  background-color: #faf9f6;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 2rem) clamp(1rem, 0.75rem + 1.25vw, 1.5rem);
+}
+
+/* Wider showcase container on index.html for the watercolor cover */
+body.home-page {
+  max-width: 82ch;
+}
+
+h1 {
+  font-size: var(--text-h1);
+  line-height: 1.2;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8b3a3a;
+  text-decoration: underline;
+}
+
+/* Standard Top Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-bottom: 1px solid #e2e0d8;
+  padding-bottom: 1rem;
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3rem);
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: var(--text-md);
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+}
+
+/* Custom Poem Image Header */
+.poem-custom-header {
+  margin-bottom: 2.5rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.header-banner {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Front Cover Landing Page (index.html) */
+.cover-showcase {
+  margin: 0 auto 2rem;
+}
+
+.book-cover-art {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.book-cover-art:hover {
+  transform: scale(1.01);
+}
+
+.cover-caption {
+  text-align: center;
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: #777;
+  margin-top: 0.75rem;
+}
+
+.book-intro {
+  text-align: center;
+  margin: 1rem 0 3rem;
+}
+
+.book-intro h1 {
+  margin-bottom: 0.35rem;
+}
+
+.author {
+  font-style: italic;
+  font-size: var(--text-md);
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.cover-actions {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  flex-wrap: wrap;
+}
+
+.primary-link {
+  font-weight: bold;
+  font-size: var(--text-lg);
+  border-bottom: 1px solid #222;
+  padding-bottom: 0.2rem;
+}
+
+.primary-link:hover {
+  color: #8b3a3a;
+  border-bottom-color: #8b3a3a;
+  text-decoration: none;
+}
+
+.secondary-link {
+  font-size: var(--text-lg);
+  color: #555;
+}
+
+/* Dedicated Table of Contents (toc.html) */
+.page-heading {
+  margin-bottom: 2.0rem;
+}
+
+.chapter {
+  margin-bottom: 3.5rem;
+}
+
+.chapter h2,
+.toc-chapter h2 {
+  font-size: var(--text-md);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666;
+  border-bottom: 1px solid #e2e0d8; /* Warm archival gray */
+}
+
+.chapter h2 {
+  border-bottom: 1px solid #e2e0d8;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.poem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+  column-gap: 2.5rem;
+}
+
+.poem-list li {
+  margin-bottom: 0.5rem;
+  break-inside: avoid; /* Prevents a wrapped two-line title from splitting across columns */
+}
+
+.poem-list a {
+  font-size: var(--text-lg);
+  display: block;
+  padding: 0.2rem 0;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.poem-list a:hover {
+  color: #8b3a3a;
+  text-decoration: none;
+  transform: translateX(3px);
+}
+
+/* Stack image on top when the screen is narrow (phones) */
+@media (max-width: 600px) {
+  .poem-list {
+    columns: 1;
+  }
+
+  .poem-list li {
+    margin-bottom: 0.75rem;
+  }
+}
+
+
+/* About Page (about.html) */
+.about-container p {
+  font-size: var(--text-md);
+  margin-bottom: 1.5rem;
+}
+
+.about-name {
+  font-weight: bold;
+  font-size: var(--text-md);
+  margin-bottom: 0.15rem;
+}
+
+.about-location {
+  font-style: italic;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.author-photo {
+  float: right;
+  width: 240px;
+  height: auto;
+  margin: 0.4rem 0 1.25rem 2rem; /* Adds breathing room on the left and bottom */
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Stack image on top when the screen is narrow (phones) */
+@media (max-width: 600px) {
+  .author-photo {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 2rem;
+  }
+}
+
+/* Centered Individual Poem Formatting */
+.poem-container h1 {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.poem-body {
+  text-align: left;
+  white-space: pre-wrap;
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  margin: 2rem 0 4rem;
+}
+
+/* Bottom Previous / Next Page-Turning Navigation */
+.poem-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid #e2e0d8;
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: #666;
+  margin-top: 4rem;
+}
+
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Space between the image and text */
+  text-decoration: none; /* Removes underline from the link */
+  color: #000; /* Set your preferred text color */
+}
+
+.home-link img {
+  display: block;
+  height: 32px; /* Adjust size to fit your header */
+  width: auto;
+}
+
+.poem-pagination a {
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.poem-pagination a:first-child:hover {
+  transform: translateX(-3px);
+}
+
+.poem-pagination a:last-child:not(:first-child):hover {
+  transform: translateX(3px);
+}
+
+.dedication-kicker {
+  font-size: var(--text-md);
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.dedication-title {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.dedication-years {
+  font-size: var(--text-md);
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.dedication_signature {
+  margin-top: 2rem; 
+  font-style: italic;  
+}
+
+.not-found-art {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 60vh;
+  margin: 0 auto 1.5rem;
+}
+
+/* Tighten spacing on the final poem with the signature */
+.poem-container:has(.author-signature) .poem-body {
+  margin-bottom: .25rem;
+}
+
+.author-signature {
+  display: block;
+  width: clamp(160px, 35vw, 220px);
+  height: auto;
+  margin: 0 0 0 0;
+}
