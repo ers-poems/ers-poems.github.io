@@ -1,0 +1,19 @@
+{
+  "name": "Upside Down — Poetic Diary of Ernest R. Shifflett",
+  "short_name": "Upside Down",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#8CB41E",
+  "background_color": "#D5D8D3",
+  "display": "standalone"
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Ernest R. Shifflett" />
+<meta property="og:site_name" content="Upside Down — Poetic Diary of Ernest R. Shifflett" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://github.io" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+<meta name="theme-color" content="#8CB41E">  
+  <title>Page Not Found — Upside Down</title>
+  <script>
+    if (!window.location.pathname.endsWith('/404.html')) {
+      const pathParts = window.location.pathname.split('/');
+      const baseDepth = window.location.hostname.endsWith('github.io') ? 2 : 1;
+      const basePath = pathParts.slice(0, baseDepth).join('/') + '/';
+      window.location.replace(basePath + '404.html');
+    }
+  </script>
+  <link rel="stylesheet" crossorigin href="./assets/style-DFnnD5SC.css">
+</head>
+<body>
+  <!-- Or swap this header with your vite-plugin-html-inject <load> partial -->
+  <header class="site-header">
+
+  <a href="./index.html" class="home-link site-title">
+    <img src="./favicon-32x32.png" alt="Home">
+    <span>Upside Down</span>
+  </a>
+
+  <nav class="site-nav">
+    <a href="./dedication.html">Dedication</a>
+    <a href="./toc.html">Table of Contents</a>
+    <a href="./about.html">About</a>
+  </nav>
+  </header>
+
+  <main class="book-intro">
+    <article class="poem-container">
+      <picture>
+        <!-- Tall portrait version for narrow screens -->
+        <source media="(max-width: 600px)" srcset="images/404-portrait.webp" />
+        <!-- Wide landscape version for wider screens -->
+        <img
+          src="images/404-landscape.webp"
+          alt="An open vintage poetry book reading 404 Page Not Found: It seems the page you're looking for has turned upside down and gone missing."
+          class="not-found-art"
+        />
+      </picture>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2008–2026 Ernest R. Shifflett</p>
+  </footer>
+</body>
+</html>
